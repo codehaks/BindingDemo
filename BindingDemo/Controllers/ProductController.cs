@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using BindingDemo.Models;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
 namespace BindingDemo.Controllers
@@ -14,6 +15,20 @@ namespace BindingDemo.Controllers
         {
             _logger.LogInformation("Index->Done!");
             return Ok("Done!");
+        }
+
+        public IActionResult Create()
+        {
+            return View();
+        }       
+
+        public IActionResult Get(Product model)
+        {
+            var message = $"Get -> price={model.Price} , name ={model.Name}";
+
+            _logger.LogInformation(message);
+
+            return Ok(message);
         }
     }
 }
