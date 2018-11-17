@@ -16,8 +16,8 @@ namespace BindingDemo.Controllers
         }
         public IActionResult Index()
         {
-            _logger.LogInformation("Index");
-            return Ok();
+            _logger.LogInformation("Index->Done!");
+            return Ok("Done!");
         }
     }
 }
