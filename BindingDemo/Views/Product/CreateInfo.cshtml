@@ -8,32 +8,27 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Get">
+        <form asp-action="GetInfo">
 
             <div class="form-group">
-                
+
                 <input name="Name" class="form-control" placeholder="Name" />
-
-            </div>
-            <div class="form-group">
-                
-                <input name="Price" class="form-control" placeholder="Price"/>
+                <input name="Price" class="form-control" placeholder="Price" />
             </div>
             <hr />
             <strong>Maker</strong><br />
-            <div class="form-group">
-                
-                <input name="Maker.Name" class="form-control" placeholder="Maker.Name" />
 
-            </div>
             <div class="form-group">
-                
-                <input name="Price" class="form-control" placeholder="Maker.Country" />
+                <input name="Maker.Name" class="form-control" placeholder="Maker.Name" />
+                <input name="Maker.Country" class="form-control" placeholder="Maker.Country" />
             </div>
+
             <hr />
+
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-default" />
             </div>
+
         </form>
     </div>
 </div>
