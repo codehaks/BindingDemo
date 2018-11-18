@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="GetList" class="form-inline">
+
+            @for (int i = 0; i < 3; i++)
+            {
+                <div class="form-group">
+
+                    <input name="Products[@i].Name" class="form-control" placeholder="Name" />
+                    <input name="Products[@i].Price" class="form-control" placeholder="Price" />
+
+                </div>
+          
+            }
+
+
+            <div class="form-group">
+                <br />
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
