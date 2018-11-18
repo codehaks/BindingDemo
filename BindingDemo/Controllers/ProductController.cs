@@ -12,6 +12,10 @@ namespace BindingDemo.Controllers
         {
             _logger = logger;
         }
+
+        #region Create
+
+       
         public IActionResult Index()
         {
             _logger.LogInformation("Index->Done!");
@@ -32,6 +36,10 @@ namespace BindingDemo.Controllers
             return Ok(message);
         }
 
+        #endregion
+
+        #region Complex Types        
+
         public IActionResult CreateInfo()
         {
             return View();
@@ -45,6 +53,10 @@ namespace BindingDemo.Controllers
 
             return Ok(message);
         }
+
+        #endregion
+
+        #region Collection
 
         public IActionResult CreateList()
         {
@@ -63,5 +75,7 @@ namespace BindingDemo.Controllers
 
             return Ok(message);
         }
+
+        #endregion
     }
 }
