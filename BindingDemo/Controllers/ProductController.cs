@@ -29,7 +29,7 @@ namespace BindingDemo.Controllers
             return View();
         }
 
-        public IActionResult Get([ModelBinder(typeof(TagsModelBinder))] IEnumerable<string> tags ,Product model)
+        public IActionResult Get(IEnumerable<string> tags ,Product model)
         {
             var message = $"Get -> price={model.Price} , name ={model.Name} \n";
             var tagsMessage = "";
