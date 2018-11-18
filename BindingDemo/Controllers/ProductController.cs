@@ -32,6 +32,20 @@ namespace BindingDemo.Controllers
             return Ok(message);
         }
 
+        public IActionResult CreateInfo()
+        {
+            return View();
+        }
+
+        public IActionResult GetInfo(ProductInfo model)
+        {
+            var message = $"Get -> Price={model.Price},Name ={model.Name} | Maker.Name ={model.Maker.Name}, Maker.Country={model.Maker.Country}";
+
+            _logger.LogInformation(message);
+
+            return Ok(message);
+        }
+
         public IActionResult CreateList()
         {
             return View();
