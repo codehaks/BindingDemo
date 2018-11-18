@@ -1,5 +1,6 @@
 ﻿using BindingDemo.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
 
@@ -27,7 +28,7 @@ namespace BindingDemo.Controllers
             return View();
         }
 
-        public IActionResult Get(Product model)
+        public IActionResult Get([FromQuery]Product model)
         {
             var message = $"Get -> price={model.Price} , name ={model.Name}";
 
