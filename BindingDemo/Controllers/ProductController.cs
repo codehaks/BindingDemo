@@ -1,4 +1,5 @@
-﻿using BindingDemo.Models;
+﻿using BindingDemo.Binders;
+using BindingDemo.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.Extensions.Logging;
@@ -28,13 +29,18 @@ namespace BindingDemo.Controllers
             return View();
         }
 
-        public IActionResult Get([FromQuery]Product model)
+        public IActionResult Get([ModelBinder(typeof(TagsModelBinder))] IEnumerable<string> tags ,Product model)
         {
-            var message = $"Get -> price={model.Price} , name ={model.Name}";
+            var message = $"Get -> price={model.Price} , name ={model.Name} \n";
+            var tagsMessage = "";
+            foreach (var item in tags)
+            {
+                tagsMessage += item + "\n";
+            }
 
-            _logger.LogInformation(message);
+            _logger.LogInformation(message+tagsMessage);
 
-            return Ok(message);
+            return Ok(message + tagsMessage);
         }
 
         #endregion
